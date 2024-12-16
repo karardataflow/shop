@@ -1,2 +1,6 @@
+from view import *
+
+
 class Controller:
-    pass
+    def __init__(self):
+        self.view = MyView(self)
