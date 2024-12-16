@@ -1,123 +1,198 @@
 import sys 
-from PySide6.QtWidgets import QApplication ,QMainWindow , QPushButton, QGridLayout, QFrame ,QLabel
-from PySide6.QtGui import QIcon , QAction ,QPixmap
-from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QGridLayout, QFrame, QVBoxLayout, QLabel
+from PySide6.QtGui import QIcon, QFont
+from PySide6.QtCore import Qt, QSize
 
 
 class MyView(QMainWindow):
-    def __init__(self, controller = None):
+    def __init__(self, controller=None):
         super().__init__()
         self.controller = controller
 
         self.setGeometry(100, 200, 800, 1000)
 
-        freme = QFrame()
-        layout = QGridLayout(freme)
+        main_frame = QFrame()
+        main_frame.setStyleSheet(
+            """background-color: #fff"""
+        )
+        layout = QGridLayout(main_frame)
 
-        label_freme = QFrame()
-        label_freme.setStyleSheet("background-color: #1A3654; color: white;")
-        label_freme.setFixedHeight(100)
-        label_freme.setGeometry(0,0,800,1000)
+        label_frame = QFrame()
+        label_frame_layout = QVBoxLayout(label_frame)
+        label_frame.setStyleSheet("""
+                                  background-color: #1A3654; 
+                                  color: white;
+                                  background-image: url('./static/لنكيدو Market.png');
+                                  background-repeat: no-repeat;
+                                  background-position: center;
+                                  """)
+        label_frame.setFixedHeight(100)
+        label_frame.setGeometry(0, 0, 800, 1000)
 
-        layout.addWidget(label_freme,0,0)
+        
+        
 
-        self.setCentralWidget(freme)
-
-
-
-
-
-
-
-
-# #الفريم الاعلى 
-
-# frem = QFrame(s)
-# frem.setStyleSheet("background-color: #1A3654; color: white;")
-# frem.setFixedHeight(100)
-# frem.setFixedWidth(800)
-# frem.setGeometry(0,0,800,1000)
-
-
-# lebl = QLabel( frem)
-# icon = QPixmap("lnk.png")
-# lebl.setPixmap(icon)
-# lebl.setAlignment(Qt.AlignCenter ) 
-# lebl.setStyleSheet("background-color: #1A3654; color: white;")
-
-
-# leut = QGridLayout (frem)
-# leut.addWidget(lebl)
+        
 
 
 
-# #الزر
-# frame = QFrame(s)
+        layout.addWidget(label_frame, 0, 0)
 
-# s.setCentralWidget(frame)
+        self.setCentralWidget(main_frame)
 
-# layout = QGridLayout(frame)
+        frame = QFrame()
+        frame_layout = QGridLayout(frame)
+        layout.addWidget(frame, 1, 0)
+
+        icon = QIcon('./static/Untitled (4).png')
+
+        # Button 1
+        button1 = QPushButton()
+        button1.clicked.connect(controller.show_list)
+        button1.setStyleSheet("""
+            QPushButton {
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 10px;
+                font-size: 16px;
+                background-image: url('./static/Group 1.png');
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            QPushButton:hover {
+                background-color: #E9FDF2;
+            }
+        """)
+        button1.setIcon(icon)
+        button1.setIconSize(QSize(250, 250))
+        frame_layout.addWidget(button1, 0, 0)
+
+        # Button 2
+        button2 = QPushButton()
+        button2.setStyleSheet("""
+            QPushButton {
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 10px;
+                font-size: 16px;
+                background-image: url('./static/Group 2.png');
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            QPushButton:hover {
+                background-color: #E9FDF2;
+            }
+        """)
+        button2.setIcon(icon)
+        button2.setIconSize(QSize(250, 250))
+        frame_layout.addWidget(button2, 0, 1)
+
+        # Button 3
+        button3 = QPushButton()
+        button3.setStyleSheet("""
+            QPushButton {
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 10px;
+                font-size: 16px;
+                background-image: url('./static/Group 3.png');
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            QPushButton:hover {
+                background-color: #E9FDF2;
+            }
+        """)
+        button3.setIcon(icon)
+        button3.setIconSize(QSize(250, 250))
+        frame_layout.addWidget(button3, 0, 2)
+
+        # Button 4
+        button4 = QPushButton()
+        button4.setStyleSheet("""
+            QPushButton {
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 10px;
+                font-size: 16px;
+                background-image: url('./static/Group 4.png');
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            QPushButton:hover {
+                background-color: #E9FDF2;
+            }
+        """)
+        button4.setIcon(icon)
+        button4.setIconSize(QSize(250, 250))
+        frame_layout.addWidget(button4, 1, 0)
+
+        # Button 5
+        button5 = QPushButton()
+        button5.setStyleSheet("""
+            QPushButton {
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 10px;
+                font-size: 16px;
+                background-image: url('./static/Group 5.png');
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            QPushButton:hover {
+                background-color: #E9FDF2;
+            }
+        """)
+        button5.setIcon(icon)
+        button5.setIconSize(QSize(250, 250))
+        frame_layout.addWidget(button5, 1, 1)
+
+        # Button 6
+        button6 = QPushButton()
+        button6.setStyleSheet("""
+            QPushButton {
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 10px;
+                font-size: 16px;
+                background-image: url('./static/Group 6.png');
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            QPushButton:hover {
+                background-color: #E9FDF2;
+            }
+        """)
+        button6.setIcon(icon)
+        button6.setIconSize(QSize(250, 250))
+        frame_layout.addWidget(button6, 1, 2)
+
+        # Button 7
+        button7 = QPushButton()
+        button7.setStyleSheet("""
+            QPushButton {
+                background-color: #FFF;
+                border-radius: 5px;
+                padding: 10px;
+                font-size: 16px;
+                background-repeat: no-repeat;
+                background-image: url('./static/Group 7.png');
+                background-position: center;
+            }
+            QPushButton:hover {
+                background-color: #E9FDF2;
+            }
+        """)
+        button7.setIcon(icon)
+        button7.setIconSize(QSize(250, 250))
+        frame_layout.addWidget(button7, 2, 0)
 
 
-# butn1 = QPushButton ("")
-# layout.addWidget(butn1,0,0)
-# butn1.setStyleSheet("background-image: url('1.1.png') ")  
-# butn1.setFixedSize(150, 150)
 
+class Lists(QMainWindow):
+    def __init__(self, controller):
+        super().__init__()
+        self.controller = controller
 
-
-# butn2= QPushButton("")
-# layout.addWidget(butn2,0,1)
-# butn2.setStyleSheet("background-image: url('1.1.png') ")  
-# butn2.setFixedSize(150, 150)
-
-
-
-
-# butn3 = QPushButton ("")
-# layout.addWidget(butn3,0,2)
-# butn3.setStyleSheet("background-image: url('1.1.png') ")  
-# butn3.setFixedSize(150, 150)
-
-
-
-# butn4 = QPushButton ("")
-# layout.addWidget(butn4,1,0)
-# butn4.setStyleSheet("background-image: url('1.1.png') ")  
-# butn4.setFixedSize(150, 150)
-
-
-
-# butn5 = QPushButton ("")
-# layout.addWidget(butn5,1,1)
-# butn5.setStyleSheet("background-image: url('1.1.png') ")  
-# butn5.setFixedSize(150, 150)
-
-
-
-# butn6 = QPushButton ("")
-# layout.addWidget(butn6,1,2)
-# butn6.setStyleSheet("background-image: url('1.1.png') ")  
-# butn6.setFixedSize(150, 150)
-
-
-
-
-# butn7 = QPushButton ("")
-# layout.addWidget(butn7,2,0)
-# butn7.setStyleSheet("background-image: url('1.1.png') ")  
-# butn7.setFixedSize(150, 150)
-
-
-
-
-
-
-
-
-
-
-
-
-# s.show()
-# sys.exit(a.exec_())
+        self.setWindowTitle("القوائم")
+        self.resize(500, 500)
