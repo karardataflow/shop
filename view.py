@@ -236,8 +236,8 @@ class Lists(QMainWindow):
         layout1.addWidget(icon_label)
 
         # إضافة نص في Layout2 (Layout الفريم)
-        label = QLabel("السعر")
-        label.setStyleSheet('''
+        label_price = QLabel("السعر")
+        label_price.setStyleSheet('''
             color: #FFF;
             font-family: Inter;
             font-size: 14px;
@@ -245,23 +245,18 @@ class Lists(QMainWindow):
             font-weight: 700;
             line-height: normal;
         ''')
-        layout2.addWidget(label, 0, 1)  # إضافة النص في المكان المناسب
-         
-        self.name = QSpinBox()
-        self.name.setStyleSheet("""
-                               border-radius: 4px;
-                    background: #fff;
-                                
-                                
-                                """)
+        layout2.addWidget(label_price, 0, 3)
 
+        price_input = QLineEdit()
+        price_input.setStyleSheet("""
+            border-radius: 4px;
+            background-color: #fff;
+        """)
+        layout2.addWidget(price_input, 0, 2)
 
-        layout2.addWidget(self.name,0,0)
-
-
-
-        label = QLabel("أسم الشركة")
-        label.setStyleSheet('''
+        # اسم الشركة
+        label_company = QLabel("أسم الشركة")
+        label_company.setStyleSheet('''
             color: #FFF;
             font-family: Inter;
             font-size: 14px;
@@ -269,23 +264,18 @@ class Lists(QMainWindow):
             font-weight: 700;
             line-height: normal;
         ''')
-        layout2.addWidget(label, 0, 2)  # إضافة النص في المكان المناسب
-         
-        self.name = QSpinBox()
-        self.name.setStyleSheet("""
-                               border-radius: 4px;
-                    background: #fff;
-                                
-                                
-                                """)
+        layout2.addWidget(label_company, 0, 1)
 
+        company_input = QLineEdit()
+        company_input.setStyleSheet("""
+            border-radius: 4px;
+            background-color: #fff;
+        """)
+        layout2.addWidget(company_input, 0, 0)
 
-        layout2.addWidget(self.name, 0, 3)
-
-
-                        
-        label = QLabel("التاريخ والوقت")
-        label.setStyleSheet('''
+        # التاريخ والوقت
+        label_datetime = QLabel("التاريخ والوقت")
+        label_datetime.setStyleSheet('''
             color: #FFF;
             font-family: Inter;
             font-size: 14px;
@@ -293,21 +283,18 @@ class Lists(QMainWindow):
             font-weight: 700;
             line-height: normal;
         ''')
-        layout2.addWidget(label,1, 1 )  # إضافة النص في المكان المناسب
-         
-        self.name = QSpinBox()
-        self.name.setStyleSheet("""
-                               border-radius: 4px;
-                    background: #fff;
-                                
-                                
-                                """)
+        layout2.addWidget(label_datetime, 1, 1)
 
+        datetime_input = QLineEdit()
+        datetime_input.setStyleSheet("""
+            border-radius: 4px;
+            background-color: #fff;
+        """)
+        layout2.addWidget(datetime_input, 1, 0)
 
-        layout2.addWidget(self.name,1, 0)             
-                       
-        label = QLabel("رقم القائمة ")
-        label.setStyleSheet('''
+        # رقم القائمة
+        label_list_number = QLabel("رقم القائمة")
+        label_list_number.setStyleSheet('''
             color: #FFF;
             font-family: Inter;
             font-size: 14px;
@@ -315,18 +302,16 @@ class Lists(QMainWindow):
             font-weight: 700;
             line-height: normal;
         ''')
-        layout2.addWidget(label,2, 1)  # إضافة النص في المكان المناسب
-         
-        self.name = QSpinBox()
-        self.name.setStyleSheet("""
-                               border-radius: 4px;
-                    background: #fff;
-                                
-                                
-                                """)
+        layout2.addWidget(label_list_number, 1, 3)
 
+        list_number_input = QLineEdit()
+        list_number_input.setStyleSheet("""
+            border-radius: 4px;
+            background-color: #fff;
+        """)
+        layout2.addWidget(list_number_input, 1, 2)
 
-        layout2.addWidget(self.name,2, 0)
+        
 
 
 
